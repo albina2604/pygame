@@ -8,7 +8,7 @@ class AlienInvasion:
         pygame.init()
         self.screen = pygame.display.set_mode((1200, 800))
         self.screen_rect = self.screen.get_rect()
-        pygame.display.set_caption("Stars")
+        pygame.display.set_caption("Ship")
         self.bg_color = (255, 255, 255)
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()

@@ -3,29 +3,6 @@ from pygame.sprite import Sprite
 import sys
 
 
-class Star(Sprite):
-    """Класс для звезды"""
-
-    def __init__(self, start):
-        """Инициализирует звезду и задает его начальную позицию"""
-        super().__init__()
-        self.screen = start.screen
-
-        # Загрузка рисунка пришельца и назначение атрибута rect
-        self.image = pygame.image.load('images/star.bmp')
-        self.rect = self.image.get_rect()
-
-        # Каждый новый пришелец появляется в левом верхнем углу
-        self.rect.x = self.rect.width
-        self.rect.y = self.rect.height
-
-        # Сохранение точной горизонтальной позиции пришельца
-        self.x = float(self.rect.x)
-
-    def update(self):
-        self.rect.x = self.x
-
-
 class Start:
     def __init__(self):
         pygame.init()
@@ -80,6 +57,29 @@ class Start:
         self.stars.draw(self.screen)
         # Отображение последнего прорисованого экрана
         pygame.display.flip()
+
+
+class Star(Sprite):
+    """Класс для звезды"""
+
+    def __init__(self, start_game):
+        """Инициализирует звезду и задает его начальную позицию"""
+        super().__init__()
+        self.screen = start_game.screen
+
+        # Загрузка рисунка пришельца и назначение атрибута rect
+        self.image = pygame.image.load('images/star.bmp')
+        self.rect = self.image.get_rect()
+
+        # Каждый новый пришелец появляется в левом верхнем углу
+        self.rect.x = self.rect.width
+        self.rect.y = self.rect.height
+
+        # Сохранение точной горизонтальной позиции пришельца
+        self.x = float(self.rect.x)
+
+    def update(self):
+        self.rect.x = self.x
 
 
 if __name__ == '__main__':
