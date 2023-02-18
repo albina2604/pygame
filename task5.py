@@ -13,9 +13,6 @@ class AlienInvasion:
         self.ship = Ship(self)
         self.bullets = pygame.sprite.Group()
 
-        self.ship = Ship(self)
-        self.bullets = pygame.sprite.Group()
-
     def run_game(self):
         """Запуск основного центра игры"""
         while True:
